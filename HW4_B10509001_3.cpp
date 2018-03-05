@@ -16,7 +16,7 @@ class Player{
 			win=i;
 			lose=i;
 			ran=i;
-		}// 建構子
+		}// 建構子  ASAFGSRHS
 		void show(){
 			count=win+lose;
 			if(usermoney-200>=0){
