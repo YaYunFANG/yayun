@@ -1,3 +1,4 @@
+//ASC
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
@@ -16,18 +17,18 @@ class Player{
 			win=i;
 			lose=i;
 			ran=i;
-		}// «Øºc¤l
+		}// å»ºæ§‹å­
 		void show(){
 			count=win+lose;
 			if(usermoney-200>=0){
-				printf("±z¦@ª±%d¤F¦^¦X¡AÄ¹%d¦^¦X¡A¿é%d¦^¦X¡A¥Ø«e¾lÃB%d¤¸¡A¦@ÁÈ%d¤¸\n",count,win,lose,usermoney,usermoney-200);
+				printf("æ‚¨å…±ç©%däº†å›åˆï¼Œè´%då›åˆï¼Œè¼¸%då›åˆï¼Œç›®å‰é¤˜é¡%då…ƒï¼Œå…±è³º%då…ƒ\n",count,win,lose,usermoney,usermoney-200);
 			}else if(usermoney<0){
-				printf("±z¦@ª±%d¤F¦^¦X¡AÄ¹%d¦^¦X¡A¿é%d¦^¦X¡A¥Ø«e¾lÃB0¤¸¡A¦@½ß%d¤¸\n",count,win,lose,usermoney*-1);
+				printf("æ‚¨å…±ç©%däº†å›åˆï¼Œè´%då›åˆï¼Œè¼¸%då›åˆï¼Œç›®å‰é¤˜é¡0å…ƒï¼Œå…±è³ %då…ƒ\n",count,win,lose,usermoney*-1);
 			}else{
-				printf("±z¦@ª±%d¤F¦^¦X¡AÄ¹%d¦^¦X¡A¿é%d¦^¦X¡A¥Ø«e¾lÃB%d¤¸¡A¦@½ß%d¤¸\n",count,win,lose,usermoney,200-usermoney);				
+				printf("æ‚¨å…±ç©%däº†å›åˆï¼Œè´%då›åˆï¼Œè¼¸%då›åˆï¼Œç›®å‰é¤˜é¡%då…ƒï¼Œå…±è³ %då…ƒ\n",count,win,lose,usermoney,200-usermoney);				
 			}
 			
-		} // Åã¥Üª±®a¦¨ÁZ
+		} // é¡¯ç¤ºç©å®¶æˆç¸¾
 };
 
 class Gamble{
@@ -53,7 +54,7 @@ class Gamble{
 					}
 					comcards+=1;				
 			}
-		}// µoµPµ¹¹q¸£
+		}// ç™¼ç‰Œçµ¦é›»è…¦
 		void playerserve(char willing){
 			srand(time(NULL));		
 			int play=rand()%13+1;
@@ -64,38 +65,38 @@ class Gamble{
 					usersum+=play;
 				}
 				usercards+=1;
-				printf("\n§A¥Ø«eÂI¼Æ¬°¡G%d\n",usersum);
+				printf("\nä½ ç›®å‰é»æ•¸ç‚ºï¼š%d\n",usersum);
 				if(usercards<5&&usersum<21){					
-					printf("½Ğ°İ¬O§_­n¼W¥[µP¼Æ(y/n)¡G");
+					printf("è«‹å•æ˜¯å¦è¦å¢åŠ ç‰Œæ•¸(y/n)ï¼š");
 					cin>>willing;
 					playerserve(willing);
 				}				
 			}
 																
-		} // µoµPµ¹ª±®a
+		} // ç™¼ç‰Œçµ¦ç©å®¶
 		Player check(Player player,int ran){
 			printf("\n===========Result===========\n");
-			printf("¹q¸£¦@µo%d±iµP ÂI¼Æ¡G%dÂI\n±z¦@µo%d±iµP ÂI¼Æ¡G%dÂI\n",comcards,comsum,usercards,usersum);
+			printf("é›»è…¦å…±ç™¼%då¼µç‰Œ é»æ•¸ï¼š%dé»\næ‚¨å…±ç™¼%då¼µç‰Œ é»æ•¸ï¼š%dé»\n",comcards,comsum,usercards,usersum);
 			if (usersum>=21){
-				printf("±zªºÂI¼Æ¶W¹L21ÂI¡A§A¿é¤F\n");
+				printf("æ‚¨çš„é»æ•¸è¶…é21é»ï¼Œä½ è¼¸äº†\n");
 				comcount+=1;
-				printf("±z¿é¤F%d¤¸\n",player.money*ran);
+				printf("æ‚¨è¼¸äº†%då…ƒ\n",player.money*ran);
 			}else if(comsum>=21){
-				printf("¹q¸£ÂI¼Æ¶W¹L21ÂI¡A±zÄ¹¤F\n");
+				printf("é›»è…¦é»æ•¸è¶…é21é»ï¼Œæ‚¨è´äº†\n");
 				usercount+=1;	
 				player.usermoney+=player.money*ran;
-				printf("±zÄ¹¤F%d¤¸¡A§t¥»ª÷%d¤¸¦@%d¤¸\n",player.money*ran,player.money,player.usermoney);				
+				printf("æ‚¨è´äº†%då…ƒï¼Œå«æœ¬é‡‘%då…ƒå…±%då…ƒ\n",player.money*ran,player.money,player.usermoney);				
 			}else if (usersum<=comsum){
-				printf("±zªºÂI¼Æ¤ñ¹q¸£ÂI¼Æ¤p¡A§A¿é¤F\n");
+				printf("æ‚¨çš„é»æ•¸æ¯”é›»è…¦é»æ•¸å°ï¼Œä½ è¼¸äº†\n");
 				comcount+=1;
-				printf("±z¿é¤F%d¤¸\n",player.money*ran);
+				printf("æ‚¨è¼¸äº†%då…ƒ\n",player.money*ran);
 			}else if(usersum>comsum){
-				printf("¹q¸£ÂI¼Æ¤ñ§AªºÂI¼Æ¤p¡A±zÄ¹¤F\n");
+				printf("é›»è…¦é»æ•¸æ¯”ä½ çš„é»æ•¸å°ï¼Œæ‚¨è´äº†\n");
 				usercount+=1;
 				player.usermoney+=player.money*ran;
-				printf("±zÄ¹¤F%d¤¸¡A§t¥»ª÷%d¤¸¦@%d¤¸\n",player.money*ran,player.money,player.usermoney);
+				printf("æ‚¨è´äº†%då…ƒï¼Œå«æœ¬é‡‘%då…ƒå…±%då…ƒ\n",player.money*ran,player.money,player.usermoney);
 			}			
-		} // ³Ó­t§P©w
+		} // å‹è² åˆ¤å®š
 };
 
 int main(void){
@@ -109,7 +110,7 @@ int main(void){
 		g.usercards=0;
 		g.usersum=0;
 		p.ran=0;
-		printf("\n===========¹CÀ¸¶}©l===========\n");
+		printf("\n===========éŠæˆ²é–‹å§‹===========\n");
 		for(int i=1;i<=2;i++){
 			int play=rand()%13+1;
 			if(play>10){
@@ -120,18 +121,18 @@ int main(void){
 				g.usercards+=1;
 		}
 		g.comserve();
-		printf("¥Ø«e¾lÃB¬°¡G%d¤¸\n",p.usermoney);
+		printf("ç›®å‰é¤˜é¡ç‚ºï¼š%då…ƒ\n",p.usermoney);
 		srand(time(NULL));
 		p.ran = rand()%6+1;
-		printf("¦¹¦^¦X¹CÀ¸½ß²v¬°%d­¿\n",p.ran);
-		printf("½Ğ¿é¤J¤Uª`ª÷ÃB¡G");
+		printf("æ­¤å›åˆéŠæˆ²è³ ç‡ç‚º%då€\n",p.ran);
+		printf("è«‹è¼¸å…¥ä¸‹æ³¨é‡‘é¡ï¼š");
 		cin>>p.money;
 		while(p.money>p.usermoney){
-			printf("½Ğ­«·s¿é¤J¤Uª`ª÷ÃB¡G");
+			printf("è«‹é‡æ–°è¼¸å…¥ä¸‹æ³¨é‡‘é¡ï¼š");
 			cin>>p.money;
 		}		
-		printf("\n§A¥Ø«eÂI¼Æ¬°¡G%d\n",g.usersum);
-		printf("½Ğ°İ¬O§_­n¼W¥[µP¼Æ(y/n)¡G");
+		printf("\nä½ ç›®å‰é»æ•¸ç‚ºï¼š%d\n",g.usersum);
+		printf("è«‹å•æ˜¯å¦è¦å¢åŠ ç‰Œæ•¸(y/n)ï¼š");
 		cin>>con;
 		g.playerserve(con);
 		p.lose=g.comcount;
@@ -146,10 +147,10 @@ int main(void){
 		}
 		
 		if(p.usermoney>0){
-			printf("½Ğ¿ï¾Ü¬O§_Ä~Äò¹CÀ¸(y/n)¡G");
+			printf("è«‹é¸æ“‡æ˜¯å¦ç¹¼çºŒéŠæˆ²(y/n)ï¼š");
 			cin>>con;
 		}else{
-			printf("±z¨S¿ú¤F¡A½ĞÂ÷¶}\n");
+			printf("æ‚¨æ²’éŒ¢äº†ï¼Œè«‹é›¢é–‹\n");
 			break;
 		}				
 	}while(con=='Y'||con=='y');
